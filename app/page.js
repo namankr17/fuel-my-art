@@ -1,103 +1,77 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
+  const [username, setUsername] = useState('')
+  const handleChange = (e) => {
+    setUsername(e.target.value);
+  };
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <div className="py-28 flex items-center justify-center flex-col text-white gap-6 px-4">
+        <h1 className="text-5xl max-[400px]:text-4xl font-bold flex items-center gap-2">
+          <span>Fuel My Art</span>
+          <img src="/can.svg" width={50} alt="" />
+        </h1>
+        <p className="text-center">A platform for creators and artists to get support from fans and followers. Start Now!</p>
+        <div>
+          <Link href={'/login'} className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 cursor-pointer">
+            <span className="relative px-5 py-2.5 transition-all ease-in duration-200 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+              Start Now!
+            </span>
+          </Link>
+          <Link href={'/about'} className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 cursor-pointer">
+            <span className="relative px-5 py-2.5 transition-all ease-in duration-200 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+              Read More
+            </span>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+      <div className='h-0.5 bg-white opacity-20'></div>
+      <div className="py-20 w-full text-white px-4">
+        <h1 className="text-center text-3xl font-bold max-[400px]:text-2xl">Your fans can support you</h1>
+        <div className="max-w-[1000px] mx-auto flex justify-around items-center mt-16 gap-2  max-[580px]:flex-col max-[580px]:mt-12 max-[580px]:gap-12">
+          <div className="flex flex-col items-center gap-1">
+            <img src="/coin.gif" width={80} alt="" className="bg-blue-400 rounded-full p-1"/>
+            <h2 className="font-bold">Support via Fuel</h2>
+            <p className="text-sm text-center">It is not just money, but fuel for your journey</p>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <img src="/man.gif" width={80} alt="" className="bg-blue-400 rounded-full p-1"/>
+            <h2 className="font-bold">Fans can help</h2>
+            <p className="text-sm text-center">Your fans can available for you to help</p>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <img src="/group.gif" width={80} alt="" className="bg-blue-400 rounded-full p-1"/>
+            <h2 className="font-bold">Fans can collaborate</h2>
+            <p className="text-sm text-center">Your fans collaborate with you in your projects</p>
+          </div>
+        </div>
+      </div>
+      <div className='h-0.5 bg-white opacity-20'></div>
+      <div className="py-20 px-4">
+        {/* search your creator here */}
+        <h1 className="text-center text-3xl font-bold text-white max-[400px]:text-2xl">Search your creator</h1>
+        <div className="mx-auto flex justify-center items-center mt-8">
+          <div className="flex items-center gap-2">
+            <input type="text" value={username} onChange={(e)=>handleChange(e)} placeholder="Enter username" className="p-2 mb-2 rounded-md bg-gray-800 text-white" />
+            <Link href={`/profile/${username}`} className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 cursor-pointer">
+              <span className="relative px-5 py-2.5 transition-all ease-in duration-200 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                Search
+              </span>
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className='h-0.5 bg-white opacity-20'></div>
+      <div className="py-20 w-full text-white px-4">
+        <h1 className="text-center text-3xl font-bold max-[400px]:text-2xl">Learn more about us</h1>
+        <div className="max-w-[1000px] mx-auto flex justify-around items-center mt-16">
+          <iframe className="w-[480px] h-[280px] max-[540px]:w-[300px] max-[540px]:h-[180px] max-[400px]:w-[240px] max-[400px]:h-[140px]" src="https://www.youtube.com/embed/Khck8VHlOm0?si=9os5KaDARRhwtduY" title="YouTube video player" style={{ border: "none" }} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        </div>
+      </div>
+    </>
   );
 }
