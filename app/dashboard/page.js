@@ -6,11 +6,10 @@ import { useRouter } from 'next/navigation'
 import { ToastContainer, toast } from 'react-toastify';
 import { updateUserDetails } from '@/actions/useractions';
 import { ReloadContext } from '@/context/ReloadContext';
-import { set } from 'mongoose';
 import Loader from '@/components/Loader';
 
 
-const page = () => {
+const Page = () => {
     const { data: session } = useSession()
     const router = useRouter()
     const value = useContext(ReloadContext)
@@ -150,4 +149,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
