@@ -87,7 +87,7 @@ export default function Home() {
           </h2>
           <div id="accordion-flush-body-1" className={showAcc[0]?"":"hidden"} aria-labelledby="accordion-flush-heading-1">
             <div className="py-5 border-b border-gray-200 dark:border-gray-700">
-              <p className="mb-2 text-gray-500 dark:text-gray-400">Fuel My Art is a platform where creators can receive financial support from their audience through one-time or recurring contributions. It's a simple way to turn appreciation into action.</p>
+              <p className="mb-2 text-gray-500 dark:text-gray-400">Fuel My Art is a platform where creators can receive financial support from their audience through one-time or recurring contributions. It&apos;s a simple way to turn appreciation into action.</p>
             </div>
           </div>
           <h2 id="accordion-flush-heading-2">
@@ -178,7 +178,7 @@ export default function Home() {
           </h2>
           <div id="accordion-flush-body-8" className={showAcc[7]?"":"hidden"}  aria-labelledby="accordion-flush-heading-8">
             <div className="py-5 border-b border-gray-200 dark:border-gray-700">
-              <p className="mb-2 text-gray-500 dark:text-gray-400">Click the "Start Now" button, sign up as a creator, and set up your page in a few minutes. No coding or complicated steps required.</p>
+              <p className="mb-2 text-gray-500 dark:text-gray-400">Click the &quot;Start Now&quot; button, sign up as a creator, and set up your page in a few minutes. No coding or complicated steps required.</p>
             </div>
           </div>
         </div>
